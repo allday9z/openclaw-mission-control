@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /Users/uficon_dev/github_repo/openclaw-mission-control/frontend && npm install next-themes next-intl 2>&1 | tail -5)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

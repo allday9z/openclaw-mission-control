@@ -39,6 +39,8 @@ services:
       AUTH_MODE: ${AUTH_MODE}
       LOCAL_AUTH_TOKEN: ${LOCAL_AUTH_TOKEN}
       RQ_REDIS_URL: redis://redis:6379/0
+      # Coolify: expose service on port 8000 via reverse proxy
+      SERVICE_FQDN_BACKEND_8000: ${SERVICE_FQDN_BACKEND:-}
     depends_on:
       db:
         condition: service_healthy
@@ -60,6 +62,8 @@ services:
     environment:
       NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-auto}
       NEXT_PUBLIC_AUTH_MODE: ${AUTH_MODE}
+      # Coolify: expose service on port 3000 via reverse proxy
+      SERVICE_FQDN_FRONTEND_3000: ${SERVICE_FQDN_FRONTEND:-}
     depends_on:
       - backend
     develop:

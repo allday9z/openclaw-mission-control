@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "navigation": "เมนูหลัก",
+    "overview": "ภาพรวม",
+    "dashboard": "แดชบอร์ด",
+    "liveFeed": "ฟีดสด",
+    "boards": "บอร์ด",
+    "boardGroups": "กลุ่มบอร์ด",
+    "tags": "แท็ก",
+    "approvals": "การอนุมัติ",
+    "customFields": "ฟิลด์กำหนดเอง",
+    "skills": "ทักษะ",
+    "marketplace": "มาร์เก็ตเพลส",
+    "packs": "แพ็ก",
+    "administration": "การจัดการ",
+    "organization": "องค์กร",
+    "gateways": "เกตเวย์",
+    "agents": "เอเจนต์",
+    "settings": "ตั้งค่า"
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "description": "ภาพรวมศูนย์ควบคุมของคุณ"
+  },
+  "common": {
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "delete": "ลบ",
+    "edit": "แก้ไข",
+    "loading": "กำลังโหลด…",
+    "saving": "กำลังบันทึก…",
+    "reset": "รีเซ็ต",
+    "search": "ค้นหา",
+    "openBoards": "เปิดบอร์ด",
+    "createBoard": "สร้างบอร์ด",
+    "signOut": "ออกจากระบบ",
+    "systemOperational": "ระบบทำงานปกติ",
+    "systemUnavailable": "ไม่ทราบสถานะระบบ",
+    "systemDegraded": "ระบบทำงานผิดปกติ"
+  },
+  "settings": {
+    "title": "ตั้งค่า",
+    "description": "อัปเดตโปรไฟล์และการตั้งค่าบัญชีของคุณ",
+    "profile": "โปรไฟล์",
+    "profileDescription": "อัปเดตข้อมูลประจำตัวและเขตเวลาของคุณ",
+    "name": "ชื่อ",
+    "namePlaceholder": "ชื่อของคุณ",
+    "timezone": "เขตเวลา",
+    "timezonePlaceholder": "เลือกเขตเวลา",
+    "timezoneSearch": "ค้นหาเขตเวลา…",
+    "timezoneEmpty": "ไม่พบเขตเวลาที่ตรงกัน",
+    "email": "อีเมล",
+    "saveSettings": "บันทึกการตั้งค่า",
+    "settingsSaved": "บันทึกการตั้งค่าแล้ว",
+    "nameAndTimezoneRequired": "กรุณากรอกชื่อและเขตเวลา",
+    "deleteAccount": "ลบบัญชี",
+    "deleteAccountDescription": "การดำเนินการนี้จะลบบัญชี Mission Control และข้อมูลส่วนตัวของคุณอย่างถาวร ไม่สามารถยกเลิกได้",
+    "deleteAccountConfirmTitle": "ลบบัญชีของคุณ?",
+    "deleteAccountConfirmDescription": "บัญชีและข้อมูลส่วนตัวของคุณจะถูกลบอย่างถาวร",
+    "deleteAccountConfirmLabel": "ลบบัญชี",
+    "deletingAccount": "กำลังลบบัญชี…",
+    "language": "ภาษา",
+    "languageDescription": "เลือกภาษาที่ต้องการแสดง",
+    "languageLabel": "ภาษาแสดงผล"
+  },
+  "gateways": {
+    "title": "เกตเวย์",
+    "description": "จัดการเกตเวย์ผู้ให้บริการ AI ของคุณ",
+    "name": "ชื่อ",
+    "provider": "ผู้ให้บริการ",
+    "apiKey": "API Key",
+    "baseUrl": "Base URL",
+    "save": "บันทึกเกตเวย์",
+    "cancel": "ยกเลิก"
+  },
+  "agents": {
+    "title": "เอเจนต์",
+    "description": "จัดการ AI เอเจนต์ของคุณ"
+  },
+  "commandPalette": {
+    "placeholder": "ค้นหาคำสั่ง…",
+    "noResults": "ไม่พบผลลัพธ์",
+    "navigate": "นำทาง",
+    "actions": "การดำเนินการ"
+  }
+}

@@ -11,11 +11,15 @@ import {
   Folder,
   Building2,
   LayoutGrid,
+  Moon,
   Network,
   Settings,
   Store,
+  Sun,
   Tags,
 } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 import { useAuth } from "@/auth/clerk";
 import { ApiError } from "@/api/mutator";
@@ -30,6 +34,10 @@ export function DashboardSidebar() {
   const pathname = usePathname();
   const { isSignedIn } = useAuth();
   const { isAdmin } = useOrganizationMembership(isSignedIn);
+  const { theme, setTheme } = useTheme();
+  const t = useTranslations("nav");
+  const tc = useTranslations("common");
+
   const healthQuery = useHealthzHealthzGet<healthzHealthzGetResponse, ApiError>(
     {
       query: {
@@ -52,115 +60,67 @@ export function DashboardSidebar() {
           : "unknown";
   const statusLabel =
     systemStatus === "operational"
-      ? "All systems operational"
+      ? tc("systemOperational")
       : systemStatus === "unknown"
-        ? "System status unavailable"
-        : "System degraded";
+        ? tc("systemUnavailable")
+        : tc("systemDegraded");
+
+  const navLink = (href: string, exact = false) =>
+    cn(
+      "flex items-center gap-3 rounded-lg px-3 py-2.5 text-[var(--text-muted)] transition",
+      (exact ? pathname === href : pathname.startsWith(href))
+        ? "bg-[var(--accent-soft)] text-[var(--accent)] font-medium"
+        : "hover:bg-[var(--surface-muted)]",
+    );
 
   return (
-    <aside className="fixed inset-y-0 left-0 z-40 flex w-[280px] -translate-x-full flex-col border-r border-slate-200 bg-white pt-16 shadow-lg transition-transform duration-200 ease-in-out [[data-sidebar=open]_&]:translate-x-0 md:relative md:inset-auto md:z-auto md:w-[260px] md:translate-x-0 md:pt-0 md:shadow-none md:transition-none">
-      <div className="flex-1 px-3 py-4">
-        <p className="px-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-          Navigation
+    <aside className="fixed inset-y-0 left-0 z-40 flex w-[280px] -translate-x-full flex-col border-r border-[var(--border)] bg-[var(--surface)] pt-16 shadow-lg transition-transform duration-200 ease-in-out [[data-sidebar=open]_&]:translate-x-0 md:relative md:inset-auto md:z-auto md:w-[260px] md:translate-x-0 md:pt-0 md:shadow-none md:transition-none">
+      <div className="flex-1 px-3 py-4 overflow-y-auto">
+        <p className="px-3 text-xs font-semibold uppercase tracking-wider text-[var(--text-quiet)]">
+          {t("navigation")}
         </p>
         <nav className="mt-3 space-y-4 text-sm">
           <div>
-            <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-              Overview
+            <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[var(--text-quiet)]">
+              {t("overview")}
             </p>
             <div className="mt-1 space-y-1">
-              <Link
-                href="/dashboard"
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                  pathname === "/dashboard"
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "hover:bg-slate-100",
-                )}
-              >
+              <Link href="/dashboard" className={navLink("/dashboard", true)}>
                 <BarChart3 className="h-4 w-4" />
-                Dashboard
+                {t("dashboard")}
               </Link>
-              <Link
-                href="/activity"
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                  pathname.startsWith("/activity")
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "hover:bg-slate-100",
-                )}
-              >
+              <Link href="/activity" className={navLink("/activity")}>
                 <Activity className="h-4 w-4" />
-                Live feed
+                {t("liveFeed")}
               </Link>
             </div>
           </div>
 
           <div>
-            <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-              Boards
+            <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[var(--text-quiet)]">
+              {t("boards")}
             </p>
             <div className="mt-1 space-y-1">
-              <Link
-                href="/board-groups"
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                  pathname.startsWith("/board-groups")
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "hover:bg-slate-100",
-                )}
-              >
+              <Link href="/board-groups" className={navLink("/board-groups")}>
                 <Folder className="h-4 w-4" />
-                Board groups
+                {t("boardGroups")}
               </Link>
-              <Link
-                href="/boards"
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                  pathname.startsWith("/boards")
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "hover:bg-slate-100",
-                )}
-              >
+              <Link href="/boards" className={navLink("/boards")}>
                 <LayoutGrid className="h-4 w-4" />
-                Boards
+                {t("boards")}
               </Link>
-              <Link
-                href="/tags"
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                  pathname.startsWith("/tags")
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "hover:bg-slate-100",
-                )}
-              >
+              <Link href="/tags" className={navLink("/tags")}>
                 <Tags className="h-4 w-4" />
-                Tags
+                {t("tags")}
               </Link>
-              <Link
-                href="/approvals"
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                  pathname.startsWith("/approvals")
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "hover:bg-slate-100",
-                )}
-              >
+              <Link href="/approvals" className={navLink("/approvals")}>
                 <CheckCircle2 className="h-4 w-4" />
-                Approvals
+                {t("approvals")}
               </Link>
               {isAdmin ? (
-                <Link
-                  href="/custom-fields"
-                  className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                    pathname.startsWith("/custom-fields")
-                      ? "bg-blue-100 text-blue-800 font-medium"
-                      : "hover:bg-slate-100",
-                  )}
-                >
+                <Link href="/custom-fields" className={navLink("/custom-fields")}>
                   <Settings className="h-4 w-4" />
-                  Custom fields
+                  {t("customFields")}
                 </Link>
               ) : null}
             </div>
@@ -169,34 +129,20 @@ export function DashboardSidebar() {
           <div>
             {isAdmin ? (
               <>
-                <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  Skills
+                <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[var(--text-quiet)]">
+                  {t("skills")}
                 </p>
                 <div className="mt-1 space-y-1">
                   <Link
                     href="/skills/marketplace"
-                    className={cn(
-                      "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                      pathname === "/skills" ||
-                        pathname.startsWith("/skills/marketplace")
-                        ? "bg-blue-100 text-blue-800 font-medium"
-                        : "hover:bg-slate-100",
-                    )}
+                    className={navLink("/skills/marketplace")}
                   >
                     <Store className="h-4 w-4" />
-                    Marketplace
+                    {t("marketplace")}
                   </Link>
-                  <Link
-                    href="/skills/packs"
-                    className={cn(
-                      "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                      pathname.startsWith("/skills/packs")
-                        ? "bg-blue-100 text-blue-800 font-medium"
-                        : "hover:bg-slate-100",
-                    )}
-                  >
+                  <Link href="/skills/packs" className={navLink("/skills/packs")}>
                     <Boxes className="h-4 w-4" />
-                    Packs
+                    {t("packs")}
                   </Link>
                 </div>
               </>
@@ -204,62 +150,58 @@ export function DashboardSidebar() {
           </div>
 
           <div>
-            <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-              Administration
+            <p className="px-3 text-[11px] font-semibold uppercase tracking-wider text-[var(--text-quiet)]">
+              {t("administration")}
             </p>
             <div className="mt-1 space-y-1">
-              <Link
-                href="/organization"
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                  pathname.startsWith("/organization")
-                    ? "bg-blue-100 text-blue-800 font-medium"
-                    : "hover:bg-slate-100",
-                )}
-              >
+              <Link href="/organization" className={navLink("/organization")}>
                 <Building2 className="h-4 w-4" />
-                Organization
+                {t("organization")}
               </Link>
               {isAdmin ? (
-                <Link
-                  href="/gateways"
-                  className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                    pathname.startsWith("/gateways")
-                      ? "bg-blue-100 text-blue-800 font-medium"
-                      : "hover:bg-slate-100",
-                  )}
-                >
+                <Link href="/gateways" className={navLink("/gateways")}>
                   <Network className="h-4 w-4" />
-                  Gateways
+                  {t("gateways")}
                 </Link>
               ) : null}
               {isAdmin ? (
-                <Link
-                  href="/agents"
-                  className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-700 transition",
-                    pathname.startsWith("/agents")
-                      ? "bg-blue-100 text-blue-800 font-medium"
-                      : "hover:bg-slate-100",
-                  )}
-                >
+                <Link href="/agents" className={navLink("/agents")}>
                   <Bot className="h-4 w-4" />
-                  Agents
+                  {t("agents")}
                 </Link>
               ) : null}
             </div>
           </div>
         </nav>
       </div>
-      <div className="border-t border-slate-200 p-4">
-        <div className="flex items-center gap-2 text-xs text-slate-500">
+
+      <div className="border-t border-[var(--border)] p-4 space-y-3">
+        {/* Theme toggle */}
+        <button
+          type="button"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-xs text-[var(--text-muted)] hover:bg-[var(--surface-muted)] transition"
+          aria-label="Toggle theme"
+        >
+          {theme === "dark" ? (
+            <Sun className="h-4 w-4" />
+          ) : (
+            <Moon className="h-4 w-4" />
+          )}
+          {theme === "dark" ? "Light mode" : "Dark mode"}
+          <kbd className="ml-auto rounded bg-[var(--surface-strong)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--text-quiet)]">
+            ⌘K
+          </kbd>
+        </button>
+
+        {/* System status */}
+        <div className="flex items-center gap-2 text-xs text-[var(--text-quiet)]">
           <span
             className={cn(
               "h-2 w-2 rounded-full",
               systemStatus === "operational" && "bg-emerald-500",
               systemStatus === "degraded" && "bg-rose-500",
-              systemStatus === "unknown" && "bg-slate-300",
+              systemStatus === "unknown" && "bg-[var(--surface-strong)]",
             )}
           />
           {statusLabel}

@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 
 import { useAuth, useUser } from "@/auth/clerk";
 import { useQueryClient } from "@tanstack/react-query";
-import { Globe, Mail, RotateCcw, Save, Trash2, User } from "lucide-react";
+import { Globe, Languages, Mail, RotateCcw, Save, Trash2, User } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import {
   useDeleteMeApiV1UsersMeDelete,
@@ -23,6 +24,7 @@ import { ConfirmActionDialog } from "@/components/ui/confirm-action-dialog";
 import { Input } from "@/components/ui/input";
 import SearchableSelect from "@/components/ui/searchable-select";
 import { getSupportedTimezones } from "@/lib/timezones";
+import { type Locale, getLocale, setLocale } from "@/lib/locale";
 
 type ClerkGlobal = {
   signOut?: (options?: { redirectUrl?: string }) => Promise<void> | void;
@@ -33,6 +35,7 @@ export default function SettingsPage() {
   const queryClient = useQueryClient();
   const { isSignedIn } = useAuth();
   const { user } = useUser();
+  const ts = useTranslations("settings");
 
   const [name, setName] = useState("");
   const [timezone, setTimezone] = useState<string | null>(null);
@@ -239,6 +242,30 @@ export default function SettingsPage() {
                 </Button>
               </div>
             </form>
+          </section>
+
+          <section className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-sm">
+            <h2 className="text-base font-semibold text-[var(--text)]">{ts("language")}</h2>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">
+              {ts("languageDescription")}
+            </p>
+            <div className="mt-4">
+              <label className="flex items-center gap-2 text-sm font-medium text-[var(--text-muted)] mb-2">
+                <Languages className="h-4 w-4" />
+                {ts("languageLabel")}
+              </label>
+              <select
+                defaultValue={typeof window !== "undefined" ? getLocale() : "en"}
+                onChange={(e) => {
+                  setLocale(e.target.value as Locale);
+                  window.location.reload();
+                }}
+                className="rounded-xl border border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--text)] focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-soft)]"
+              >
+                <option value="en">English</option>
+                <option value="th">ภาษาไทย</option>
+              </select>
+            </div>
           </section>
 
           <section className="rounded-xl border border-rose-200 bg-rose-50/70 p-6 shadow-sm">

@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "navigation": "Navigation",
+    "overview": "Overview",
+    "dashboard": "Dashboard",
+    "liveFeed": "Live feed",
+    "boards": "Boards",
+    "boardGroups": "Board groups",
+    "tags": "Tags",
+    "approvals": "Approvals",
+    "customFields": "Custom fields",
+    "skills": "Skills",
+    "marketplace": "Marketplace",
+    "packs": "Packs",
+    "administration": "Administration",
+    "organization": "Organization",
+    "gateways": "Gateways",
+    "agents": "Agents",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Your mission control overview."
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading…",
+    "saving": "Saving…",
+    "reset": "Reset",
+    "search": "Search",
+    "openBoards": "Open boards",
+    "createBoard": "Create board",
+    "signOut": "Sign out",
+    "systemOperational": "All systems operational",
+    "systemUnavailable": "System status unavailable",
+    "systemDegraded": "System degraded"
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Update your profile and account preferences.",
+    "profile": "Profile",
+    "profileDescription": "Keep your identity and timezone up to date.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "timezone": "Timezone",
+    "timezonePlaceholder": "Select timezone",
+    "timezoneSearch": "Search timezones…",
+    "timezoneEmpty": "No matching timezones.",
+    "email": "Email",
+    "saveSettings": "Save settings",
+    "settingsSaved": "Settings saved.",
+    "nameAndTimezoneRequired": "Name and timezone are required.",
+    "deleteAccount": "Delete account",
+    "deleteAccountDescription": "This permanently removes your Mission Control account and related personal data. This action cannot be undone.",
+    "deleteAccountConfirmTitle": "Delete your account?",
+    "deleteAccountConfirmDescription": "Your account and personal data will be permanently deleted.",
+    "deleteAccountConfirmLabel": "Delete account",
+    "deletingAccount": "Deleting account…",
+    "language": "Language",
+    "languageDescription": "Choose your preferred display language.",
+    "languageLabel": "Display language"
+  },
+  "gateways": {
+    "title": "Gateways",
+    "description": "Manage your AI provider gateways.",
+    "name": "Name",
+    "provider": "Provider",
+    "apiKey": "API Key",
+    "baseUrl": "Base URL",
+    "save": "Save gateway",
+    "cancel": "Cancel"
+  },
+  "agents": {
+    "title": "Agents",
+    "description": "Manage your AI agents."
+  },
+  "commandPalette": {
+    "placeholder": "Search commands…",
+    "noResults": "No results found.",
+    "navigate": "Navigate",
+    "actions": "Actions"
+  }
+}

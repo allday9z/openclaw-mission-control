@@ -83,7 +83,7 @@ export function GatewayForm({
             <Input
               value={gatewayUrl}
               onChange={(event) => onGatewayUrlChange(event.target.value)}
-              placeholder="ws://gateway:18789"
+              placeholder="wss://gateway.example.com or ws://gateway:18789"
               disabled={isLoading}
               className={gatewayUrlError ? "border-red-500" : undefined}
             />

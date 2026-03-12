@@ -1,0 +1,628 @@
+2026-Mar-12 10:55:23.918330 Docker 27.0.3 with BuildKit and Buildx detected on deployment server (coolify.pve01.prod.uficon.com).
+2026-Mar-12 10:55:23.924577 Starting deployment of abhi1693/openclaw-mission-control:master to coolify.pve01.prod.uficon.com.
+2026-Mar-12 10:55:24.083132 Preparing container with helper image: ghcr.io/coollabsio/coolify-helper:1.0.12
+2026-Mar-12 10:55:24.175987 [DEBUG] [CMD]: docker stop -t 30 mt5q45wfwyyw76hrrb9etki2
+2026-Mar-12 10:55:24.175987 [DEBUG] Error response from daemon: No such container: mt5q45wfwyyw76hrrb9etki2
+2026-Mar-12 10:55:24.292788 [DEBUG] [CMD]: docker run -d --network coolify --name mt5q45wfwyyw76hrrb9etki2  --rm -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/coollabsio/coolify-helper:1.0.12
+2026-Mar-12 10:55:24.292788 [DEBUG] beb30503d42127a59c518890ea7335c6fbf5ab3b479a90e3b60fda846fa9b53f
+2026-Mar-12 10:55:25.425792 [DEBUG] [CMD]: docker exec mt5q45wfwyyw76hrrb9etki2 bash -c 'GIT_SSH_COMMAND="ssh -o ConnectTimeout=30 -p 22 -o Port=22 -o LogLevel=ERROR -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git ls-remote https://github.com/abhi1693/openclaw-mission-control refs/heads/master'
+2026-Mar-12 10:<REDACTED>@\(.*\):#https://\1/#g" '\''/artifacts/mt5q45wfwyyw76hrrb9etki2'\''/.gitmodules || true && git submodule sync && GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git submodule update --init --recursive --depth=1; fi && cd '\''/artifacts/mt5q45wfwyyw76hrrb9etki2'\'' && GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" git lfs pull'
+2026-Mar-12 10:<REDACTED>@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6
+2026-Mar-12 10:55:36.109767 [DEBUG] #6 resolve docker.io/docker/dockerfile:1@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6 done
+2026-Mar-12 10:55:36.109767 [DEBUG] #6 sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6 8.40kB / 8.40kB done
+2026-Mar-12 10:55:36.109767 [DEBUG] #6 sha256:62b0eac4b38b65f257ba2525a1bc87978b5e339d6133b5daef1bde40fe7aa10f 850B / 850B done
+2026-Mar-12 10:55:36.109767 [DEBUG] #6 sha256:6742480c08d7878bbb82a5f5b55d7cb17c5dea60d2068cb2bd37994f3a5c680e 1.33kB / 1.33kB done
+2026-Mar-12 10:55:36.109767 [DEBUG] #6 sha256:77246a01651da592b7bae79e0e20ed3b4f2e4c00a1b54b7c921c91ae3fa9ef07 0B / 13.57MB 0.1s
+2026-Mar-12 10:55:36.211240 [DEBUG] #6 sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6 8.40kB / 8.40kB done
+2026-Mar-12 10:55:36.211240 [DEBUG] #6 sha256:62b0eac4b38b65f257ba2525a1bc87978b5e339d6133b5daef1bde40fe7aa10f 850B / 850B done
+2026-Mar-12 10:55:36.211240 [DEBUG] #6 sha256:6742480c08d7878bbb82a5f5b55d7cb17c5dea60d2068cb2bd37994f3a5c680e 1.33kB / 1.33kB done
+2026-Mar-12 10:55:36.610458 [DEBUG] #6 sha256:77246a01651da592b7bae79e0e20ed3b4f2e4c00a1b54b7c921c91ae3fa9ef07 13.57MB / 13.57MB 0.6s
+2026-Mar-12 10:55:36.715755 [DEBUG] #6 sha256:77246a01651da592b7bae79e0e20ed3b4f2e4c00a1b54b7c921c91ae3fa9ef07 13.57MB / 13.57MB 0.6s done
+2026-Mar-12 10:55:36.715755 [DEBUG] #6 extracting sha256:77246a01651da592b7bae79e0e20ed3b4f2e4c00a1b54b7c921c91ae3fa9ef07 0.1s done
+2026-Mar-12 10:55:36.953484 [DEBUG] #6 extracting sha256:77246a01651da592b7bae79e0e20ed3b4f2e4c00a1b54b7c921c91ae3fa9ef07 0.1s done
+2026-Mar-12 10:55:36.953484 [DEBUG] #6 DONE 0.7s
+2026-Mar-12 10:55:36.953484 [DEBUG] 
+2026-Mar-12 10:55:36.953484 [DEBUG] #3 [frontend internal] load build definition from Dockerfile
+2026-Mar-12 10:55:36.953484 [DEBUG] #3 transferring dockerfile: 2.75kB done
+2026-Mar-12 10:55:36.953484 [DEBUG] #3 DONE 0.0s
+2026-Mar-12 10:55:36.953484 [DEBUG] 
+2026-Mar-12 10:55:36.953484 [DEBUG] #7 [frontend internal] load build definition from Dockerfile
+2026-Mar-12 10:55:36.953484 [DEBUG] #7 DONE 0.0s
+2026-Mar-12 10:55:36.953484 [DEBUG] 
+2026-Mar-12 10:55:36.953484 [DEBUG] #8 [webhook-worker internal] load build definition from Dockerfile
+2026-Mar-12 10:55:36.953484 [DEBUG] #8 transferring dockerfile: 3.10kB done
+2026-Mar-12 10:55:36.953484 [DEBUG] #8 DONE 0.0s
+2026-Mar-12 10:55:36.953484 [DEBUG] 
+2026-Mar-12 10:55:36.953484 [DEBUG] #9 [webhook-worker internal] load metadata for docker.io/library/python:3.12-slim
+2026-Mar-12 10:55:39.399080 [DEBUG] #9 ...
+2026-Mar-12 10:55:39.399080 [DEBUG] 
+2026-Mar-12 10:55:39.399080 [DEBUG] #10 [frontend internal] load metadata for docker.io/library/node:20-alpine
+2026-Mar-12 10:55:39.399080 [DEBUG] #10 DONE 2.6s
+2026-Mar-12 10:55:39.505915 [DEBUG] #11 [frontend internal] load .dockerignore
+2026-Mar-12 10:55:39.505915 [DEBUG] #11 transferring context: 135B done
+2026-Mar-12 10:55:39.505915 [DEBUG] #11 DONE 0.0s
+2026-Mar-12 10:55:39.505915 [DEBUG] 
+2026-Mar-12 10:55:39.505915 [DEBUG] #9 [backend internal] load metadata for docker.io/library/python:3.12-slim
+2026-Mar-12 10:55:39.505915 [DEBUG] #9 DONE 2.6s
+2026-Mar-12 10:55:39.505915 [DEBUG] 
+2026-Mar-12 10:55:39.505915 [DEBUG] #12 [backend internal] load .dockerignore
+2026-Mar-12 10:55:39.505915 [DEBUG] #12 transferring context: 380B done
+2026-Mar-12 10:55:39.505915 [DEBUG] #12 DONE 0.0s
+2026-Mar-12 10:55:39.505915 [DEBUG] 
+2026-Mar-12 10:55:39.505915 [DEBUG] #13 [webhook-worker base 1/4] FROM docker.io/library/python:3.12-slim@sha256:ccc7089399c8bb65dd1fb3ed6d55efa538a3f5e7fca3f5988ac3b5b87e593bf0
+2026-Mar-12 10:55:39.505915 [DEBUG] #13 resolve docker.io/library/python:3.12-slim@sha256:ccc7089399c8bb65dd1fb3ed6d55efa538a3f5e7fca3f5988ac3b5b87e593bf0 done
+2026-Mar-12 10:55:39.643422 [DEBUG] #13 ...
+2026-Mar-12 10:55:39.643422 [DEBUG] 
+2026-Mar-12 10:55:39.643422 [DEBUG] #14 [frontend internal] load build context
+2026-Mar-12 10:55:39.643422 [DEBUG] #14 transferring context: 2.67MB 0.1s done
+2026-Mar-12 10:55:39.643422 [DEBUG] #14 DONE 0.1s
+2026-Mar-12 10:55:39.643422 [DEBUG] 
+2026-Mar-12 10:55:39.643422 [DEBUG] #15 [backend internal] load build context
+2026-Mar-12 10:55:39.643422 [DEBUG] #15 transferring context: 1.43MB 0.0s done
+2026-Mar-12 10:55:39.643422 [DEBUG] #15 DONE 0.0s
+2026-Mar-12 10:55:39.643422 [DEBUG] 
+2026-Mar-12 10:55:39.643422 [DEBUG] #13 [webhook-worker base 1/4] FROM docker.io/library/python:3.12-slim@sha256:ccc7089399c8bb65dd1fb3ed6d55efa538a3f5e7fca3f5988ac3b5b87e593bf0
+2026-Mar-12 10:55:39.643422 [DEBUG] #13 sha256:ccc7089399c8bb65dd1fb3ed6d55efa538a3f5e7fca3f5988ac3b5b87e593bf0 10.37kB / 10.37kB done
+2026-Mar-12 10:55:39.643422 [DEBUG] #13 sha256:d6b046b27fe57002af7655dd6aa4ce3bc8a42a4621d7a5b4056a417e0d9952f5 1.75kB / 1.75kB done
+2026-Mar-12 10:55:39.643422 [DEBUG] #13 sha256:6f90d4a79e7a9816a38a528898c3f9a730dbc01dcbd8999497210bf98951e353 5.66kB / 5.66kB done
+2026-Mar-12 10:55:40.278466 [DEBUG] #13 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 0B / 29.78MB 0.8s
+2026-Mar-12 10:55:40.578476 [DEBUG] #13 sha256:30dad65d3b2447a6e75deb634f85b4ca34d5f9a6e920f9f9c0bb916abafd965a 0B / 1.29MB 1.1s
+2026-Mar-12 10:55:40.843265 [DEBUG] #13 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 3.15MB / 29.78MB 1.3s
+2026-Mar-12 10:55:40.978937 [DEBUG] #13 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 16.78MB / 29.78MB 1.5s
+2026-Mar-12 10:55:41.142885 [DEBUG] #13 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 24.12MB / 29.78MB 1.6s
+2026-Mar-12 10:55:41.262430 [DEBUG] #13 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 28.31MB / 29.78MB 1.7s
+2026-Mar-12 10:55:41.262430 [DEBUG] #13 sha256:30dad65d3b2447a6e75deb634f85b4ca34d5f9a6e920f9f9c0bb916abafd965a 1.29MB / 1.29MB 1.6s done
+2026-Mar-12 10:55:41.262430 [DEBUG] #13 sha256:5d7ccc6599a695634322e0346af751966d90030beb8b260c5af2b16dcc03d52e 0B / 12.11MB 1.7s
+2026-Mar-12 10:55:41.262430 [DEBUG] #13 extracting sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419
+2026-Mar-12 10:55:41.366008 [DEBUG] #13 sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 29.78MB / 29.78MB 1.8s done
+2026-Mar-12 10:55:41.366008 [DEBUG] #13 sha256:b9aab63c297c3a972f524d3f3c0c233d0f94720171fbe3b87e4adcb62acd8a9c 0B / 251B 1.8s
+2026-Mar-12 10:55:41.777523 [DEBUG] #13 sha256:5d7ccc6599a695634322e0346af751966d90030beb8b260c5af2b16dcc03d52e 3.15MB / 12.11MB 2.3s
+2026-Mar-12 10:55:41.878967 [DEBUG] #13 sha256:5d7ccc6599a695634322e0346af751966d90030beb8b260c5af2b16dcc03d52e 10.49MB / 12.11MB 2.4s
+2026-Mar-12 10:55:41.988097 [DEBUG] #13 sha256:5d7ccc6599a695634322e0346af751966d90030beb8b260c5af2b16dcc03d52e 12.11MB / 12.11MB 2.4s done
+2026-Mar-12 10:55:41.988097 [DEBUG] #13 sha256:b9aab63c297c3a972f524d3f3c0c233d0f94720171fbe3b87e4adcb62acd8a9c 251B / 251B 2.5s done
+2026-Mar-12 10:55:42.114984 [DEBUG] #13 extracting sha256:206356c42440674ecbdf1070cf70ce8ef7885ac2e5c56f1ecf800b758f6b0419 0.8s done
+2026-Mar-12 10:55:42.114984 [DEBUG] #13 extracting sha256:30dad65d3b2447a6e75deb634f85b4ca34d5f9a6e920f9f9c0bb916abafd965a
+2026-Mar-12 10:55:42.249334 [DEBUG] #13 extracting sha256:30dad65d3b2447a6e75deb634f85b4ca34d5f9a6e920f9f9c0bb916abafd965a 0.1s done
+2026-Mar-12 10:55:42.249334 [DEBUG] #13 extracting sha256:5d7ccc6599a695634322e0346af751966d90030beb8b260c5af2b16dcc03d52e 0.1s
+2026-Mar-12 10:55:42.555556 [DEBUG] #13 extracting sha256:5d7ccc6599a695634322e0346af751966d90030beb8b260c5af2b16dcc03d52e 0.4s done
+2026-Mar-12 10:55:42.555556 [DEBUG] #13 extracting sha256:b9aab63c297c3a972f524d3f3c0c233d0f94720171fbe3b87e4adcb62acd8a9c
+2026-Mar-12 10:55:42.717553 [DEBUG] #13 extracting sha256:b9aab63c297c3a972f524d3f3c0c233d0f94720171fbe3b87e4adcb62acd8a9c done
+2026-Mar-12 10:55:42.717553 [DEBUG] #13 DONE 3.1s
+2026-Mar-12 10:55:42.717553 [DEBUG] 
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 [frontend deps 1/4] FROM docker.io/library/node:20-alpine@sha256:b88333c42c23fbd91596ebd7fd10de239cedab9617de04142dde7315e3bc0afa
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 resolve docker.io/library/node:20-alpine@sha256:b88333c42c23fbd91596ebd7fd10de239cedab9617de04142dde7315e3bc0afa done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 sha256:ed2fdcee5269a06b0b8b77c69867176443364a72a9626e9aa2e66ab1ebda35a7 43.22MB / 43.22MB 2.1s done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 sha256:7ad115895a6aadccf7f98a05c33873c04df2933ba557c5bcdbedd3de612803da 1.26MB / 1.26MB 0.7s done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 sha256:9d10d4687fae6e13c052431ea3221ccda835c3262df3564310345ffe173146d9 445B / 445B 0.9s done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 sha256:b88333c42c23fbd91596ebd7fd10de239cedab9617de04142dde7315e3bc0afa 7.67kB / 7.67kB done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 sha256:5bac2112f1a27db4775ce6ead86db9e0cbc087f0dbddfe3cbc11ecea122d5294 1.72kB / 1.72kB done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 sha256:6757e50d3b6babac896b5ba3e7acb5219351e6a111bf4dd19974c7b0bd694c1f 6.52kB / 6.52kB done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 extracting sha256:ed2fdcee5269a06b0b8b77c69867176443364a72a9626e9aa2e66ab1ebda35a7 0.9s done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 extracting sha256:7ad115895a6aadccf7f98a05c33873c04df2933ba557c5bcdbedd3de612803da 0.0s done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 extracting sha256:9d10d4687fae6e13c052431ea3221ccda835c3262df3564310345ffe173146d9 done
+2026-Mar-12 10:55:42.717553 [DEBUG] #16 DONE 3.2s
+2026-Mar-12 10:55:42.717553 [DEBUG] 
+2026-Mar-12 10:55:42.717553 [DEBUG] #17 [webhook-worker base 2/4] WORKDIR /app
+2026-Mar-12 10:55:42.902136 [DEBUG] #17 DONE 0.1s
+2026-Mar-12 10:55:42.902136 [DEBUG] 
+2026-Mar-12 10:55:42.902136 [DEBUG] #18 [frontend deps 2/4] WORKDIR /app
+2026-Mar-12 10:55:42.902136 [DEBUG] #18 DONE 0.1s
+2026-Mar-12 10:55:42.902136 [DEBUG] 
+2026-Mar-12 10:55:42.902136 [DEBUG] #19 [frontend deps 3/4] COPY package.json package-lock.json ./
+2026-Mar-12 10:55:42.902136 [DEBUG] #19 DONE 0.1s
+2026-Mar-12 10:55:42.902136 [DEBUG] 
+2026-Mar-12 10:55:42.902136 [DEBUG] #20 [frontend runner 3/7] RUN addgroup -S appgroup && adduser -S -G appgroup appuser   && chown appuser:appgroup /app
+2026-Mar-12 10:55:42.902136 [DEBUG] #20 DONE 0.2s
+2026-Mar-12 10:55:42.902136 [DEBUG] 
+2026-Mar-12 10:55:42.902136 [DEBUG] #21 [webhook-worker base 3/4] RUN apt-get update   && apt-get install -y --no-install-recommends curl ca-certificates git   && rm -rf /var/lib/apt/lists/*
+2026-Mar-12 10:55:43.050460 [DEBUG] #21 0.331 Hit:1 http://deb.debian.org/debian trixie InRelease
+2026-Mar-12 10:<REDACTED>@INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 33.)
+2026-Mar-12 10:55:46.105194 [DEBUG] #21 3.231 debconf: falling back to frontend: Teletype
+2026-Mar-12 10:55:46.105194 [DEBUG] #21 3.236 debconf: unable to initialize frontend: Teletype
+2026-Mar-12 10:55:46.105194 [DEBUG] #21 3.236 debconf: (This frontend requires a controlling tty.)
+2026-Mar-12 10:55:46.105194 [DEBUG] #21 3.236 debconf: falling back to frontend: Noninteractive
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.361 Fetched 24.3 MB in 0s (59.6 MB/s)
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.378 Selecting previously unselected package libexpat1:amd64.
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.378 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 5645 files and directories currently installed.)
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.382 Preparing to unpack .../00-libexpat1_2.7.1-2_amd64.deb ...
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.386 Unpacking libexpat1:amd64 (2.7.1-2) ...
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.408 Selecting previously unselected package perl-modules-5.40.
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.409 Preparing to unpack .../01-perl-modules-5.40_5.40.1-6_all.deb ...
+2026-Mar-12 10:55:47.280152 [DEBUG] #21 4.410 Unpacking perl-modules-5.40 (5.40.1-6) ...
+2026-Mar-12 10:55:47.334842 [DEBUG] #21 4.616 Selecting previously unselected package libgdbm-compat4t64:amd64.
+2026-Mar-12 10:55:47.509187 [DEBUG] #21 4.617 Preparing to unpack .../02-libgdbm-compat4t64_1.24-2_amd64.deb ...
+2026-Mar-12 10:55:47.509187 [DEBUG] #21 4.618 Unpacking libgdbm-compat4t64:amd64 (1.24-2) ...
+2026-Mar-12 10:55:47.509187 [DEBUG] #21 4.637 Selecting previously unselected package libperl5.40:amd64.
+2026-Mar-12 10:55:47.509187 [DEBUG] #21 4.638 Preparing to unpack .../03-libperl5.40_5.40.1-6_amd64.deb ...
+2026-Mar-12 10:55:47.509187 [DEBUG] #21 4.640 Unpacking libperl5.40:amd64 (5.40.1-6) ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.854 Selecting previously unselected package perl.
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.856 Preparing to unpack .../04-perl_5.40.1-6_amd64.deb ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.857 Unpacking perl (5.40.1-6) ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.885 Selecting previously unselected package libbrotli1:amd64.
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.886 Preparing to unpack .../05-libbrotli1_1.1.0-2+b7_amd64.deb ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.888 Unpacking libbrotli1:amd64 (1.1.0-2+b7) ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.925 Selecting previously unselected package libkrb5support0:amd64.
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.926 Preparing to unpack .../06-libkrb5support0_1.21.3-5_amd64.deb ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.927 Unpacking libkrb5support0:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.949 Selecting previously unselected package libcom-err2:amd64.
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.950 Preparing to unpack .../07-libcom-err2_1.47.2-3+b7_amd64.deb ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.952 Unpacking libcom-err2:amd64 (1.47.2-3+b7) ...
+2026-Mar-12 10:55:47.694437 [DEBUG] #21 4.975 Selecting previously unselected package libk5crypto3:amd64.
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 4.976 Preparing to unpack .../08-libk5crypto3_1.21.3-5_amd64.deb ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 4.977 Unpacking libk5crypto3:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.002 Selecting previously unselected package libkeyutils1:amd64.
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.003 Preparing to unpack .../09-libkeyutils1_1.6.3-6_amd64.deb ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.006 Unpacking libkeyutils1:amd64 (1.6.3-6) ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.023 Selecting previously unselected package libkrb5-3:amd64.
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.024 Preparing to unpack .../10-libkrb5-3_1.21.3-5_amd64.deb ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.025 Unpacking libkrb5-3:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.061 Selecting previously unselected package libgssapi-krb5-2:amd64.
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.062 Preparing to unpack .../11-libgssapi-krb5-2_1.21.3-5_amd64.deb ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.064 Unpacking libgssapi-krb5-2:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:47.811290 [DEBUG] #21 5.092 Selecting previously unselected package libunistring5:amd64.
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.093 Preparing to unpack .../12-libunistring5_1.3-2_amd64.deb ...
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.094 Unpacking libunistring5:amd64 (1.3-2) ...
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.142 Selecting previously unselected package libidn2-0:amd64.
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.143 Preparing to unpack .../13-libidn2-0_2.3.8-2_amd64.deb ...
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.145 Unpacking libidn2-0:amd64 (2.3.8-2) ...
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.168 Selecting previously unselected package libsasl2-modules-db:amd64.
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.169 Preparing to unpack .../14-libsasl2-modules-db_2.1.28+dfsg1-9_amd64.deb ...
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.170 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.187 Selecting previously unselected package libsasl2-2:amd64.
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.188 Preparing to unpack .../15-libsasl2-2_2.1.28+dfsg1-9_amd64.deb ...
+2026-Mar-12 10:55:47.929798 [DEBUG] #21 5.189 Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.210 Selecting previously unselected package libldap2:amd64.
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.211 Preparing to unpack .../16-libldap2_2.6.10+dfsg-1_amd64.deb ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.214 Unpacking libldap2:amd64 (2.6.10+dfsg-1) ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.242 Selecting previously unselected package libnghttp2-14:amd64.
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.243 Preparing to unpack .../17-libnghttp2-14_1.64.0-1.1_amd64.deb ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.244 Unpacking libnghttp2-14:amd64 (1.64.0-1.1) ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.266 Selecting previously unselected package libnghttp3-9:amd64.
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.268 Preparing to unpack .../18-libnghttp3-9_1.8.0-1_amd64.deb ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.270 Unpacking libnghttp3-9:amd64 (1.8.0-1) ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.293 Selecting previously unselected package libpsl5t64:amd64.
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.294 Preparing to unpack .../19-libpsl5t64_0.21.2-1.1+b1_amd64.deb ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.295 Unpacking libpsl5t64:amd64 (0.21.2-1.1+b1) ...
+2026-Mar-12 10:55:48.035371 [DEBUG] #21 5.316 Selecting previously unselected package libp11-kit0:amd64.
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.317 Preparing to unpack .../20-libp11-kit0_0.25.5-3_amd64.deb ...
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.318 Unpacking libp11-kit0:amd64 (0.25.5-3) ...
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.354 Selecting previously unselected package libtasn1-6:amd64.
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.355 Preparing to unpack .../21-libtasn1-6_4.20.0-2_amd64.deb ...
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.357 Unpacking libtasn1-6:amd64 (4.20.0-2) ...
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.376 Selecting previously unselected package libgnutls30t64:amd64.
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.377 Preparing to unpack .../22-libgnutls30t64_3.8.9-3+deb13u2_amd64.deb ...
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.379 Unpacking libgnutls30t64:amd64 (3.8.9-3+deb13u2) ...
+2026-Mar-12 10:55:48.194052 [DEBUG] #21 5.475 Selecting previously unselected package librtmp1:amd64.
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.476 Preparing to unpack .../23-librtmp1_2.4+20151223.gitfa8646d.1-2+b5_amd64.deb ...
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.479 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.507 Selecting previously unselected package libssh2-1t64:amd64.
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.509 Preparing to unpack .../24-libssh2-1t64_1.11.1-1_amd64.deb ...
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.512 Unpacking libssh2-1t64:amd64 (1.11.1-1) ...
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.541 Selecting previously unselected package libcurl4t64:amd64.
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.542 Preparing to unpack .../25-libcurl4t64_8.14.1-2+deb13u2_amd64.deb ...
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.543 Unpacking libcurl4t64:amd64 (8.14.1-2+deb13u2) ...
+2026-Mar-12 10:55:48.300606 [DEBUG] #21 5.581 Selecting previously unselected package curl.
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.582 Preparing to unpack .../26-curl_8.14.1-2+deb13u2_amd64.deb ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.584 Unpacking curl (8.14.1-2+deb13u2) ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.610 Selecting previously unselected package libngtcp2-16:amd64.
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.611 Preparing to unpack .../27-libngtcp2-16_1.11.0-1_amd64.deb ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.612 Unpacking libngtcp2-16:amd64 (1.11.0-1) ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.634 Selecting previously unselected package libngtcp2-crypto-gnutls8:amd64.
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.635 Preparing to unpack .../28-libngtcp2-crypto-gnutls8_1.11.0-1_amd64.deb ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.636 Unpacking libngtcp2-crypto-gnutls8:amd64 (1.11.0-1) ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.654 Selecting previously unselected package libcurl3t64-gnutls:amd64.
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.655 Preparing to unpack .../29-libcurl3t64-gnutls_8.14.1-2+deb13u2_amd64.deb ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.656 Unpacking libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u2) ...
+2026-Mar-12 10:55:48.407311 [DEBUG] #21 5.688 Selecting previously unselected package liberror-perl.
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.689 Preparing to unpack .../30-liberror-perl_0.17030-1_all.deb ...
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.690 Unpacking liberror-perl (0.17030-1) ...
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.706 Selecting previously unselected package git-man.
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.707 Preparing to unpack .../31-git-man_1%3a2.47.3-0+deb13u1_all.deb ...
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.708 Unpacking git-man (1:2.47.3-0+deb13u1) ...
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.767 Selecting previously unselected package git.
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.768 Preparing to unpack .../32-git_1%3a2.47.3-0+deb13u1_amd64.deb ...
+2026-Mar-12 10:55:48.642756 [DEBUG] #21 5.773 Unpacking git (1:2.47.3-0+deb13u1) ...
+2026-Mar-12 10:55:48.749208 [DEBUG] #21 6.030 Setting up libexpat1:amd64 (2.7.1-2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.034 Setting up libkeyutils1:amd64 (1.6.3-6) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.037 Setting up libgdbm-compat4t64:amd64 (1.24-2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.040 Setting up libbrotli1:amd64 (1.1.0-2+b7) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.043 Setting up libnghttp2-14:amd64 (1.64.0-1.1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.047 Setting up libcom-err2:amd64 (1.47.2-3+b7) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.050 Setting up libkrb5support0:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.056 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-9) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.058 Setting up libp11-kit0:amd64 (0.25.5-3) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.060 Setting up libunistring5:amd64 (1.3-2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.062 Setting up libk5crypto3:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.064 Setting up libsasl2-2:amd64 (2.1.28+dfsg1-9) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.067 Setting up libnghttp3-9:amd64 (1.8.0-1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.070 Setting up perl-modules-5.40 (5.40.1-6) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.073 Setting up libtasn1-6:amd64 (4.20.0-2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.076 Setting up git-man (1:2.47.3-0+deb13u1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.078 Setting up libngtcp2-16:amd64 (1.11.0-1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.080 Setting up libkrb5-3:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.083 Setting up libssh2-1t64:amd64 (1.11.1-1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.086 Setting up libldap2:amd64 (2.6.10+dfsg-1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.088 Setting up libidn2-0:amd64 (2.3.8-2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.091 Setting up libperl5.40:amd64 (5.40.1-6) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.093 Setting up perl (5.40.1-6) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.101 Setting up libgssapi-krb5-2:amd64 (1.21.3-5) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.105 Setting up libgnutls30t64:amd64 (3.8.9-3+deb13u2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.108 Setting up libpsl5t64:amd64 (0.21.2-1.1+b1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.110 Setting up liberror-perl (0.17030-1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.113 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b5) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.115 Setting up libngtcp2-crypto-gnutls8:amd64 (1.11.0-1) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.118 Setting up libcurl4t64:amd64 (8.14.1-2+deb13u2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.121 Setting up libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u2) ...
+2026-Mar-12 10:55:48.853291 [DEBUG] #21 6.124 Setting up git (1:2.47.3-0+deb13u1) ...
+2026-Mar-12 10:55:49.006359 [DEBUG] #21 6.134 Setting up curl (8.14.1-2+deb13u2) ...
+2026-Mar-12 10:55:49.006359 [DEBUG] #21 6.137 Processing triggers for libc-bin (2.41-12+deb13u1) ...
+2026-Mar-12 10:55:49.267843 [DEBUG] #21 DONE 6.4s
+2026-Mar-12 10:55:49.267843 [DEBUG] 
+2026-Mar-12 10:55:49.267843 [DEBUG] #22 [webhook-worker base 4/4] RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+2026-Mar-12 10:<REDACTED>@8.3.0',
+2026-Mar-12 10:55:52.544856 [DEBUG] #26 0.829 npm warn EBADENGINE   required: { node: '>=22.18.0' },
+2026-Mar-12 10:55:52.544856 [DEBUG] #26 0.829 npm warn EBADENGINE   current: { node: 'v20.20.1', npm: '10.8.2' }
+2026-Mar-12 10:55:52.544856 [DEBUG] #26 0.829 npm warn EBADENGINE }
+2026-Mar-12 10:55:52.544856 [DEBUG] #26 2.156 npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+2026-Mar-12 10:55:52.557629 [DEBUG] #26 ...
+2026-Mar-12 10:55:52.557629 [DEBUG] 
+2026-Mar-12 10:55:52.557629 [DEBUG] #27 [backend runtime 2/7] COPY --from=deps --chown=appuser:appgroup /app/.venv /app/.venv
+2026-Mar-12 10:55:53.318899 [DEBUG] #27 DONE 0.5s
+2026-Mar-12 10:55:53.318899 [DEBUG] 
+2026-Mar-12 10:55:53.318899 [DEBUG] #28 [backend runtime 3/7] COPY --chown=appuser:appgroup backend/migrations ./migrations
+2026-Mar-12 10:55:53.318899 [DEBUG] #28 DONE 0.0s
+2026-Mar-12 10:55:53.318899 [DEBUG] 
+2026-Mar-12 10:55:53.318899 [DEBUG] #29 [webhook-worker runtime 4/7] COPY --chown=appuser:appgroup backend/alembic.ini ./alembic.ini
+2026-Mar-12 10:55:53.318899 [DEBUG] #29 DONE 0.0s
+2026-Mar-12 10:55:53.318899 [DEBUG] 
+2026-Mar-12 10:55:53.318899 [DEBUG] #30 [backend runtime 5/7] COPY --chown=appuser:appgroup backend/app ./app
+2026-Mar-12 10:55:53.318899 [DEBUG] #30 DONE 0.0s
+2026-Mar-12 10:55:53.318899 [DEBUG] 
+2026-Mar-12 10:55:53.318899 [DEBUG] #31 [webhook-worker runtime 6/7] COPY --chown=appuser:appgroup backend/templates ./templates
+2026-Mar-12 10:55:53.318899 [DEBUG] #31 DONE 0.0s
+2026-Mar-12 10:55:53.318899 [DEBUG] 
+2026-Mar-12 10:55:53.318899 [DEBUG] #32 [backend runtime 7/7] COPY --chown=appuser:appgroup scripts ./scripts
+2026-Mar-12 10:55:53.318899 [DEBUG] #32 DONE 0.0s
+2026-Mar-12 10:55:53.318899 [DEBUG] 
+2026-Mar-12 10:55:53.318899 [DEBUG] #33 [webhook-worker] exporting to image
+2026-Mar-12 10:55:53.318899 [DEBUG] #33 exporting layers
+2026-Mar-12 10:55:54.063568 [DEBUG] #33 exporting layers 0.9s done
+2026-Mar-12 10:55:54.259075 [DEBUG] #33 writing image sha256:212910d492d59b1958a2b6f5ae0c95290970fe29866d6ed826e95a7057ee5eb4 done
+2026-Mar-12 10:55:54.259075 [DEBUG] #33 naming to docker.io/library/etc8jqpc9q7olekkri4ak2mg_webhook-worker:73b01fcb258501de3c26e087b22e819fc6b48e9a done
+2026-Mar-12 10:55:54.259075 [DEBUG] #33 DONE 0.9s
+2026-Mar-12 10:55:54.259075 [DEBUG] 
+2026-Mar-12 10:55:54.259075 [DEBUG] #34 [backend] exporting to image
+2026-Mar-12 10:55:54.259075 [DEBUG] #34 exporting layers 0.9s done
+2026-Mar-12 10:55:54.259075 [DEBUG] #34 writing image sha256:212910d492d59b1958a2b6f5ae0c95290970fe29866d6ed826e95a7057ee5eb4 done
+2026-Mar-12 10:55:54.259075 [DEBUG] #34 naming to docker.io/library/etc8jqpc9q7olekkri4ak2mg_backend:73b01fcb258501de3c26e087b22e819fc6b48e9a done
+2026-Mar-12 10:55:54.259075 [DEBUG] #34 DONE 0.9s
+2026-Mar-12 10:55:54.259075 [DEBUG] 
+2026-Mar-12 10:55:54.259075 [DEBUG] #35 [backend] resolving provenance for metadata file
+2026-Mar-12 10:55:54.259075 [DEBUG] #35 DONE 0.0s
+2026-Mar-12 10:55:54.259075 [DEBUG] 
+2026-Mar-12 10:55:54.259075 [DEBUG] #36 [webhook-worker] resolving provenance for metadata file
+2026-Mar-12 10:55:54.259075 [DEBUG] #36 DONE 0.0s
+2026-Mar-12 10:55:54.259075 [DEBUG] 
+2026-Mar-12 10:55:54.259075 [DEBUG] #26 [frontend deps 4/4] RUN npm ci
+2026-Mar-12 10:56:05.580833 [DEBUG] #26 22.81
+2026-Mar-12 10:56:05.580833 [DEBUG] #26 22.81 added 915 packages, and audited 916 packages in 23s
+2026-Mar-12 10:56:05.580833 [DEBUG] #26 22.81
+2026-Mar-12 10:56:05.580833 [DEBUG] #26 22.81 324 packages are looking for funding
+2026-Mar-12 10:56:05.580833 [DEBUG] #26 22.81   run `npm fund` for details
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81 1 moderate severity vulnerability
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81 To address all issues, run:
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81   npm audit fix
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81 Run `npm audit` for details.
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81 npm notice
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81 npm notice New major version of npm available! 10.8.2 -> 11.11.1
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.11.1
+2026-Mar-12 10:<REDACTED>@11.11.1
+2026-Mar-12 10:56:05.736675 [DEBUG] #26 22.81 npm notice
+2026-Mar-12 10:56:05.851564 [DEBUG] #26 DONE 23.1s
+2026-Mar-12 10:56:10.975891 [DEBUG] #37 [frontend builder 3/5] COPY --from=deps /app/node_modules ./node_modules
+2026-Mar-12 10:56:15.126214 [DEBUG] #37 DONE 4.2s
+2026-Mar-12 10:56:15.277106 [DEBUG] #38 [frontend builder 4/5] COPY . ./
+2026-Mar-12 10:56:15.352637 [DEBUG] #38 DONE 0.2s
+2026-Mar-12 10:56:15.504028 [DEBUG] #39 [frontend builder 5/5] RUN npm run build
+2026-Mar-12 10:56:15.786621 [DEBUG] #39 0.433
+2026-Mar-12 10:56:15.786621 [DEBUG] #39 0.433 > frontend@0.1.0 build
+2026-Mar-12 10:56:15.786621 [DEBUG] #39 0.433 > next build
+2026-Mar-12 10:56:15.786621 [DEBUG] #39 0.433
+2026-Mar-12 10:56:16.487885 [DEBUG] #39 1.134 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-Mar-12 10:56:16.725918 [DEBUG] #39 1.134 This information is used to shape Next.js' roadmap and prioritize features.
+2026-Mar-12 10:56:16.725918 [DEBUG] #39 1.134 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-Mar-12 10:56:16.725918 [DEBUG] #39 1.134 https://nextjs.org/telemetry
+2026-Mar-12 10:<REDACTED>@11.11.1
+2026-Mar-12 10:56:34.813377 [DEBUG] #39 19.46 npm notice
+2026-Mar-12 10:56:35.002806 [DEBUG] #39 DONE 19.5s
+2026-Mar-12 10:56:35.441842 [DEBUG] #40 [frontend runner 4/7] COPY --from=builder --chown=appuser:appgroup /app/.next ./.next
+2026-Mar-12 10:56:35.580297 [DEBUG] #40 DONE 0.1s
+2026-Mar-12 10:56:35.749349 [DEBUG] #41 [frontend runner 5/7] COPY --from=builder --chown=appuser:appgroup /app/package.json ./package.json
+2026-Mar-12 10:56:35.749349 [DEBUG] #41 DONE 0.0s
+2026-Mar-12 10:56:37.027707 [DEBUG] #42 [frontend runner 6/7] COPY --from=builder --chown=appuser:appgroup /app/node_modules ./node_modules
+2026-Mar-12 10:56:39.878934 [DEBUG] #42 DONE 2.9s
+2026-Mar-12 10:56:40.053387 [DEBUG] #43 [frontend runner 7/7] COPY --from=builder --chown=appuser:appgroup /app/next.config.ts ./next.config.ts
+2026-Mar-12 10:56:40.053387 [DEBUG] #43 DONE 0.0s
+2026-Mar-12 10:56:40.053387 [DEBUG] 
+2026-Mar-12 10:56:40.053387 [DEBUG] #44 [frontend] exporting to image
+2026-Mar-12 10:56:40.053387 [DEBUG] #44 exporting layers
+2026-Mar-12 10:56:42.841281 [DEBUG] #44 exporting layers 2.9s done
+2026-Mar-12 10:56:42.891738 [DEBUG] #44 writing image sha256:0af56b77b099ae0ecbb0bc3c4676120d1926816f02756aba1155c1aba4861d00 done
+2026-Mar-12 10:56:42.891738 [DEBUG] #44 naming to docker.io/library/etc8jqpc9q7olekkri4ak2mg_frontend:73b01fcb258501de3c26e087b22e819fc6b48e9a done
+2026-Mar-12 10:56:42.891738 [DEBUG] #44 DONE 2.9s
+2026-Mar-12 10:56:42.891738 [DEBUG] 
+2026-Mar-12 10:56:42.891738 [DEBUG] #45 [frontend] resolving provenance for metadata file
+2026-Mar-12 10:56:42.891738 [DEBUG] #45 DONE 0.0s
+2026-Mar-12 10:56:42.896425 [DEBUG] webhook-worker  Built
+2026-Mar-12 10:56:42.896425 [DEBUG] backend  Built
+2026-Mar-12 10:56:42.896425 [DEBUG] frontend  Built
+2026-Mar-12 10:56:42.921554 [DEBUG] Creating .env file with runtime variables for container.
+2026-Mar-12 10:56:43.145715 Removing old containers.
+2026-Mar-12 10:56:43.245604 Starting new application.
+2026-Mar-12 10:56:43.766370 [DEBUG] [CMD]: docker exec mt5q45wfwyyw76hrrb9etki2 bash -c 'COOLIFY_BRANCH=master COOLIFY_RESOURCE_UUID=etc8jqpc9q7olekkri4ak2mg  docker compose --env-file /artifacts/mt5q45wfwyyw76hrrb9etki2/.env --project-name etc8jqpc9q7olekkri4ak2mg --project-directory /artifacts/mt5q45wfwyyw76hrrb9etki2 -f /artifacts/mt5q45wfwyyw76hrrb9etki2/compose.yml up -d'
+2026-Mar-12 10:56:43.766370 [DEBUG] db Pulling
+2026-Mar-12 10:56:47.890855 [DEBUG] 589002ba0eae Already exists
+2026-Mar-12 10:56:47.896270 [DEBUG] bf295aa7a64c Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] 6b36925b3510 Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] 385079160787 Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] dc66e2c13be5 Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] bfb0a9f61bdf Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] e0210f91556c Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] d513847b8a76 Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] fffbff44edaf Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] d7ea68590de1 Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] 4a8dcc9ff6fd Pulling fs layer
+2026-Mar-12 10:56:47.896270 [DEBUG] dc66e2c13be5 Waiting
+2026-Mar-12 10:56:47.896270 [DEBUG] bfb0a9f61bdf Waiting
+2026-Mar-12 10:56:47.896270 [DEBUG] d7ea68590de1 Waiting
+2026-Mar-12 10:56:47.896270 [DEBUG] 4a8dcc9ff6fd Waiting
+2026-Mar-12 10:56:47.896270 [DEBUG] e0210f91556c Waiting
+2026-Mar-12 10:56:47.896270 [DEBUG] d513847b8a76 Waiting
+2026-Mar-12 10:56:47.896270 [DEBUG] fffbff44edaf Waiting
+2026-Mar-12 10:56:49.054715 [DEBUG] 385079160787 Download complete
+2026-Mar-12 10:56:49.059892 [DEBUG] 6b36925b3510 Downloading [>                                                  ]  9.583kB/922.9kB
+2026-Mar-12 10:56:49.059892 [DEBUG] bf295aa7a64c Downloading [=================================================> ]     954B/972B
+2026-Mar-12 10:56:49.059892 [DEBUG] bf295aa7a64c Downloading [==================================================>]     972B/972B
+2026-Mar-12 10:56:49.059892 [DEBUG] bf295aa7a64c Download complete
+2026-Mar-12 10:56:49.059892 [DEBUG] bf295aa7a64c Extracting [==================================================>]     972B/972B
+2026-Mar-12 10:56:49.059892 [DEBUG] bf295aa7a64c Extracting [==================================================>]     972B/972B
+2026-Mar-12 10:56:49.064835 [DEBUG] bf295aa7a64c Pull complete
+2026-Mar-12 10:56:49.078688 [DEBUG] 6b36925b3510 Verifying Checksum
+2026-Mar-12 10:56:49.078688 [DEBUG] 6b36925b3510 Download complete
+2026-Mar-12 10:56:49.078688 [DEBUG] 6b36925b3510 Extracting [=>                                                 ]  32.77kB/922.9kB
+2026-Mar-12 10:56:49.092446 [DEBUG] 6b36925b3510 Extracting [==================================================>]  922.9kB/922.9kB
+2026-Mar-12 10:56:49.097740 [DEBUG] 6b36925b3510 Pull complete
+2026-Mar-12 10:56:49.101660 [DEBUG] 385079160787 Extracting [==================================================>]     174B/174B
+2026-Mar-12 10:56:49.101660 [DEBUG] 385079160787 Extracting [==================================================>]     174B/174B
+2026-Mar-12 10:56:49.105333 [DEBUG] 385079160787 Pull complete
+2026-Mar-12 10:56:50.238571 [DEBUG] e0210f91556c Downloading [=======>                                           ]  1.369kB/9.617kB
+2026-Mar-12 10:56:50.238571 [DEBUG] e0210f91556c Verifying Checksum
+2026-Mar-12 10:56:50.238571 [DEBUG] e0210f91556c Download complete
+2026-Mar-12 10:56:50.244083 [DEBUG] bfb0a9f61bdf Downloading [>                                                  ]  540.2kB/105.2MB
+2026-Mar-12 10:56:50.251239 [DEBUG] dc66e2c13be5 Downloading [==================================================>]     116B/116B
+2026-Mar-12 10:56:50.251239 [DEBUG] dc66e2c13be5 Verifying Checksum
+2026-Mar-12 10:56:50.251239 [DEBUG] dc66e2c13be5 Extracting [==================================================>]     116B/116B
+2026-Mar-12 10:56:50.255468 [DEBUG] dc66e2c13be5 Extracting [==================================================>]     116B/116B
+2026-Mar-12 10:56:50.259623 [DEBUG] dc66e2c13be5 Pull complete
+2026-Mar-12 10:56:50.344511 [DEBUG] bfb0a9f61bdf Downloading [===>                                               ]  6.996MB/105.2MB
+2026-Mar-12 10:56:50.445073 [DEBUG] bfb0a9f61bdf Downloading [=======>                                           ]  15.58MB/105.2MB
+2026-Mar-12 10:56:50.552524 [DEBUG] bfb0a9f61bdf Downloading [==========>                                        ]  23.09MB/105.2MB
+2026-Mar-12 10:56:50.654128 [DEBUG] bfb0a9f61bdf Downloading [=============>                                     ]  28.49MB/105.2MB
+2026-Mar-12 10:56:50.754967 [DEBUG] bfb0a9f61bdf Downloading [=================>                                 ]  37.13MB/105.2MB
+2026-Mar-12 10:56:50.860410 [DEBUG] bfb0a9f61bdf Downloading [====================>                              ]  44.12MB/105.2MB
+2026-Mar-12 10:56:50.967078 [DEBUG] bfb0a9f61bdf Downloading [=======================>                           ]  48.97MB/105.2MB
+2026-Mar-12 10:56:51.073956 [DEBUG] bfb0a9f61bdf Downloading [=========================>                         ]  53.79MB/105.2MB
+2026-Mar-12 10:56:51.196699 [DEBUG] bfb0a9f61bdf Downloading [===========================>                       ]  57.54MB/105.2MB
+2026-Mar-12 10:56:51.299115 [DEBUG] bfb0a9f61bdf Downloading [==============================>                    ]  65.05MB/105.2MB
+2026-Mar-12 10:56:51.399369 [DEBUG] bfb0a9f61bdf Downloading [===================================>               ]   74.2MB/105.2MB
+2026-Mar-12 10:56:51.463989 [DEBUG] fffbff44edaf Downloading [==================================================>]     171B/171B
+2026-Mar-12 10:56:51.463989 [DEBUG] fffbff44edaf Verifying Checksum
+2026-Mar-12 10:56:51.463989 [DEBUG] fffbff44edaf Download complete
+2026-Mar-12 10:56:51.486746 [DEBUG] d513847b8a76 Downloading [==================================================>]     128B/128B
+2026-Mar-12 10:56:51.486746 [DEBUG] d513847b8a76 Verifying Checksum
+2026-Mar-12 10:56:51.486746 [DEBUG] d513847b8a76 Download complete
+2026-Mar-12 10:56:51.511892 [DEBUG] bfb0a9f61bdf Downloading [=====================================>             ]   78.5MB/105.2MB
+2026-Mar-12 10:56:51.626275 [DEBUG] bfb0a9f61bdf Downloading [=========================================>         ]  88.21MB/105.2MB
+2026-Mar-12 10:56:51.727613 [DEBUG] bfb0a9f61bdf Downloading [=============================================>     ]  94.68MB/105.2MB
+2026-Mar-12 10:56:51.837916 [DEBUG] bfb0a9f61bdf Downloading [===============================================>   ]  100.6MB/105.2MB
+2026-Mar-12 10:56:51.919721 [DEBUG] bfb0a9f61bdf Verifying Checksum
+2026-Mar-12 10:56:51.919721 [DEBUG] bfb0a9f61bdf Download complete
+2026-Mar-12 10:56:51.928216 [DEBUG] bfb0a9f61bdf Extracting [>                                                  ]  557.1kB/105.2MB
+2026-Mar-12 10:56:52.031120 [DEBUG] bfb0a9f61bdf Extracting [===>                                               ]  7.242MB/105.2MB
+2026-Mar-12 10:56:52.136362 [DEBUG] bfb0a9f61bdf Extracting [========>                                          ]  17.27MB/105.2MB
+2026-Mar-12 10:56:52.238761 [DEBUG] bfb0a9f61bdf Extracting [============>                                      ]  26.74MB/105.2MB
+2026-Mar-12 10:56:52.343863 [DEBUG] bfb0a9f61bdf Extracting [================>                                  ]  35.65MB/105.2MB
+2026-Mar-12 10:56:52.445213 [DEBUG] bfb0a9f61bdf Extracting [====================>                              ]  44.01MB/105.2MB
+2026-Mar-12 10:56:52.553076 [DEBUG] bfb0a9f61bdf Extracting [========================>                          ]  51.25MB/105.2MB
+2026-Mar-12 10:56:52.659166 [DEBUG] bfb0a9f61bdf Extracting [===========================>                       ]  58.49MB/105.2MB
+2026-Mar-12 10:56:52.666942 [DEBUG] d7ea68590de1 Downloading [========>                                          ]     953B/5.834kB
+2026-Mar-12 10:56:52.666942 [DEBUG] d7ea68590de1 Downloading [==================================================>]  5.834kB/5.834kB
+2026-Mar-12 10:56:52.666942 [DEBUG] d7ea68590de1 Verifying Checksum
+2026-Mar-12 10:56:52.666942 [DEBUG] d7ea68590de1 Download complete
+2026-Mar-12 10:56:52.711232 [DEBUG] 4a8dcc9ff6fd Downloading [==================================================>]     185B/185B
+2026-Mar-12 10:56:52.711232 [DEBUG] 4a8dcc9ff6fd Verifying Checksum
+2026-Mar-12 10:56:52.711232 [DEBUG] 4a8dcc9ff6fd Download complete
+2026-Mar-12 10:56:52.762420 [DEBUG] bfb0a9f61bdf Extracting [================================>                  ]   67.4MB/105.2MB
+2026-Mar-12 10:56:52.909498 [DEBUG] bfb0a9f61bdf Extracting [===================================>               ]   75.2MB/105.2MB
+2026-Mar-12 10:56:53.010442 [DEBUG] bfb0a9f61bdf Extracting [====================================>              ]  76.32MB/105.2MB
+2026-Mar-12 10:56:53.111458 [DEBUG] bfb0a9f61bdf Extracting [======================================>            ]  80.77MB/105.2MB
+2026-Mar-12 10:56:53.218533 [DEBUG] bfb0a9f61bdf Extracting [========================================>          ]  85.79MB/105.2MB
+2026-Mar-12 10:56:53.359463 [DEBUG] bfb0a9f61bdf Extracting [===========================================>       ]  92.47MB/105.2MB
+2026-Mar-12 10:56:53.465896 [DEBUG] bfb0a9f61bdf Extracting [================================================>  ]  103.1MB/105.2MB
+2026-Mar-12 10:56:53.498058 [DEBUG] bfb0a9f61bdf Extracting [==================================================>]  105.2MB/105.2MB
+2026-Mar-12 10:56:53.581630 [DEBUG] bfb0a9f61bdf Pull complete
+2026-Mar-12 10:56:53.587533 [DEBUG] e0210f91556c Extracting [==================================================>]  9.617kB/9.617kB
+2026-Mar-12 10:56:53.587533 [DEBUG] e0210f91556c Extracting [==================================================>]  9.617kB/9.617kB
+2026-Mar-12 10:56:53.592963 [DEBUG] e0210f91556c Pull complete
+2026-Mar-12 10:56:53.597887 [DEBUG] d513847b8a76 Extracting [==================================================>]     128B/128B
+2026-Mar-12 10:56:53.597887 [DEBUG] d513847b8a76 Extracting [==================================================>]     128B/128B
+2026-Mar-12 10:56:53.597887 [DEBUG] d513847b8a76 Pull complete
+2026-Mar-12 10:56:53.597887 [DEBUG] fffbff44edaf Extracting [==================================================>]     171B/171B
+2026-Mar-12 10:56:53.597887 [DEBUG] fffbff44edaf Extracting [==================================================>]     171B/171B
+2026-Mar-12 10:56:53.602986 [DEBUG] fffbff44edaf Pull complete
+2026-Mar-12 10:56:53.608387 [DEBUG] d7ea68590de1 Extracting [==================================================>]  5.834kB/5.834kB
+2026-Mar-12 10:56:53.608387 [DEBUG] d7ea68590de1 Extracting [==================================================>]  5.834kB/5.834kB
+2026-Mar-12 10:56:53.612994 [DEBUG] d7ea68590de1 Pull complete
+2026-Mar-12 10:56:53.612994 [DEBUG] 4a8dcc9ff6fd Extracting [==================================================>]     185B/185B
+2026-Mar-12 10:56:53.612994 [DEBUG] 4a8dcc9ff6fd Extracting [==================================================>]     185B/185B
+2026-Mar-12 10:56:53.617469 [DEBUG] 4a8dcc9ff6fd Pull complete
+2026-Mar-12 10:56:53.622961 [DEBUG] db Pulled
+2026-Mar-12 10:56:53.627987 [DEBUG] Volume "etc8jqpc9q7olekkri4ak2mg_postgres-data"  Creating
+2026-Mar-12 10:56:53.632908 [DEBUG] Volume "etc8jqpc9q7olekkri4ak2mg_postgres-data"  Created
+2026-Mar-12 10:56:53.632908 [DEBUG] Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Creating
+2026-Mar-12 10:56:53.632908 [DEBUG] Container db-etc8jqpc9q7olekkri4ak2mg-105531267077  Creating
+2026-Mar-12 10:56:53.777193 [DEBUG] Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Created
+2026-Mar-12 10:56:53.784044 [DEBUG] Container db-etc8jqpc9q7olekkri4ak2mg-105531267077  Created
+2026-Mar-12 10:56:53.784044 [DEBUG] Container webhook-worker-etc8jqpc9q7olekkri4ak2mg-105531307330  Creating
+2026-Mar-12 10:56:53.784044 [DEBUG] Container backend-etc8jqpc9q7olekkri4ak2mg-105531288256  Creating
+2026-Mar-12 10:56:53.875925 [DEBUG] Container backend-etc8jqpc9q7olekkri4ak2mg-105531288256  Created
+2026-Mar-12 10:56:53.875925 [DEBUG] Container frontend-etc8jqpc9q7olekkri4ak2mg-105531298507  Creating
+2026-Mar-12 10:56:53.881523 [DEBUG] Container webhook-worker-etc8jqpc9q7olekkri4ak2mg-105531307330  Created
+2026-Mar-12 10:56:53.887360 [DEBUG] Container frontend-etc8jqpc9q7olekkri4ak2mg-105531298507  Created
+2026-Mar-12 10:56:53.893003 [DEBUG] Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Starting
+2026-Mar-12 10:56:53.893003 [DEBUG] Container db-etc8jqpc9q7olekkri4ak2mg-105531267077  Starting
+2026-Mar-12 10:56:54.080653 [DEBUG] Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Started
+2026-Mar-12 10:56:54.080653 [DEBUG] Error response from daemon: driver failed programming external connectivity on endpoint db-etc8jqpc9q7olekkri4ak2mg-105531267077 (1e43e1e24ff854d3b465445a999a5b9ed707f040a7fce7014586d1c61461a6b4): failed to bind port 127.0.0.1:5432/tcp: Error starting userland proxy: listen tcp4 127.0.0.1:5432: bind: address already in use
+2026-Mar-12 10:56:54.086878 [DEBUG] exit status 1
+2026-Mar-12 10:56:54.131323 ========================================
+2026-Mar-12 10:56:54.141282 Deployment failed: Command execution failed (exit code 1): docker exec mt5q45wfwyyw76hrrb9etki2 bash -c 'COOLIFY_BRANCH=master COOLIFY_RESOURCE_UUID=etc8jqpc9q7olekkri4ak2mg  docker compose --env-file /artifacts/mt5q45wfwyyw76hrrb9etki2/.env --project-name etc8jqpc9q7olekkri4ak2mg --project-directory /artifacts/mt5q45wfwyyw76hrrb9etki2 -f /artifacts/mt5q45wfwyyw76hrrb9etki2/compose.yml up -d'
+2026-Mar-12 10:56:54.141282 Error:  db Pulling
+2026-Mar-12 10:56:54.141282 589002ba0eae Already exists
+2026-Mar-12 10:56:54.141282 bf295aa7a64c Pulling fs layer
+2026-Mar-12 10:56:54.141282 6b36925b3510 Pulling fs layer
+2026-Mar-12 10:56:54.141282 385079160787 Pulling fs layer
+2026-Mar-12 10:56:54.141282 dc66e2c13be5 Pulling fs layer
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Pulling fs layer
+2026-Mar-12 10:56:54.141282 e0210f91556c Pulling fs layer
+2026-Mar-12 10:56:54.141282 d513847b8a76 Pulling fs layer
+2026-Mar-12 10:56:54.141282 fffbff44edaf Pulling fs layer
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Pulling fs layer
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Pulling fs layer
+2026-Mar-12 10:56:54.141282 dc66e2c13be5 Waiting
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Waiting
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Waiting
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Waiting
+2026-Mar-12 10:56:54.141282 e0210f91556c Waiting
+2026-Mar-12 10:56:54.141282 d513847b8a76 Waiting
+2026-Mar-12 10:56:54.141282 fffbff44edaf Waiting
+2026-Mar-12 10:56:54.141282 385079160787 Download complete
+2026-Mar-12 10:56:54.141282 6b36925b3510 Downloading [>                                                  ]  9.583kB/922.9kB
+2026-Mar-12 10:56:54.141282 bf295aa7a64c Downloading [=================================================> ]     954B/972B
+2026-Mar-12 10:56:54.141282 bf295aa7a64c Downloading [==================================================>]     972B/972B
+2026-Mar-12 10:56:54.141282 bf295aa7a64c Download complete
+2026-Mar-12 10:56:54.141282 bf295aa7a64c Extracting [==================================================>]     972B/972B
+2026-Mar-12 10:56:54.141282 bf295aa7a64c Extracting [==================================================>]     972B/972B
+2026-Mar-12 10:56:54.141282 bf295aa7a64c Pull complete
+2026-Mar-12 10:56:54.141282 6b36925b3510 Verifying Checksum
+2026-Mar-12 10:56:54.141282 6b36925b3510 Download complete
+2026-Mar-12 10:56:54.141282 6b36925b3510 Extracting [=>                                                 ]  32.77kB/922.9kB
+2026-Mar-12 10:56:54.141282 6b36925b3510 Extracting [==================================================>]  922.9kB/922.9kB
+2026-Mar-12 10:56:54.141282 6b36925b3510 Pull complete
+2026-Mar-12 10:56:54.141282 385079160787 Extracting [==================================================>]     174B/174B
+2026-Mar-12 10:56:54.141282 385079160787 Extracting [==================================================>]     174B/174B
+2026-Mar-12 10:56:54.141282 385079160787 Pull complete
+2026-Mar-12 10:56:54.141282 e0210f91556c Downloading [=======>                                           ]  1.369kB/9.617kB
+2026-Mar-12 10:56:54.141282 e0210f91556c Verifying Checksum
+2026-Mar-12 10:56:54.141282 e0210f91556c Download complete
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [>                                                  ]  540.2kB/105.2MB
+2026-Mar-12 10:56:54.141282 dc66e2c13be5 Downloading [==================================================>]     116B/116B
+2026-Mar-12 10:56:54.141282 dc66e2c13be5 Verifying Checksum
+2026-Mar-12 10:56:54.141282 dc66e2c13be5 Extracting [==================================================>]     116B/116B
+2026-Mar-12 10:56:54.141282 dc66e2c13be5 Extracting [==================================================>]     116B/116B
+2026-Mar-12 10:56:54.141282 dc66e2c13be5 Pull complete
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [===>                                               ]  6.996MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=======>                                           ]  15.58MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [==========>                                        ]  23.09MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=============>                                     ]  28.49MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=================>                                 ]  37.13MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [====================>                              ]  44.12MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=======================>                           ]  48.97MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=========================>                         ]  53.79MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [===========================>                       ]  57.54MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [==============================>                    ]  65.05MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [===================================>               ]   74.2MB/105.2MB
+2026-Mar-12 10:56:54.141282 fffbff44edaf Downloading [==================================================>]     171B/171B
+2026-Mar-12 10:56:54.141282 fffbff44edaf Verifying Checksum
+2026-Mar-12 10:56:54.141282 fffbff44edaf Download complete
+2026-Mar-12 10:56:54.141282 d513847b8a76 Downloading [==================================================>]     128B/128B
+2026-Mar-12 10:56:54.141282 d513847b8a76 Verifying Checksum
+2026-Mar-12 10:56:54.141282 d513847b8a76 Download complete
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=====================================>             ]   78.5MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=========================================>         ]  88.21MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [=============================================>     ]  94.68MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Downloading [===============================================>   ]  100.6MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Verifying Checksum
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Download complete
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [>                                                  ]  557.1kB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [===>                                               ]  7.242MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [========>                                          ]  17.27MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [============>                                      ]  26.74MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [================>                                  ]  35.65MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [====================>                              ]  44.01MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [========================>                          ]  51.25MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [===========================>                       ]  58.49MB/105.2MB
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Downloading [========>                                          ]     953B/5.834kB
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Downloading [==================================================>]  5.834kB/5.834kB
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Verifying Checksum
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Download complete
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Downloading [==================================================>]     185B/185B
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Verifying Checksum
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Download complete
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [================================>                  ]   67.4MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [===================================>               ]   75.2MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [====================================>              ]  76.32MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [======================================>            ]  80.77MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [========================================>          ]  85.79MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [===========================================>       ]  92.47MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [================================================>  ]  103.1MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Extracting [==================================================>]  105.2MB/105.2MB
+2026-Mar-12 10:56:54.141282 bfb0a9f61bdf Pull complete
+2026-Mar-12 10:56:54.141282 e0210f91556c Extracting [==================================================>]  9.617kB/9.617kB
+2026-Mar-12 10:56:54.141282 e0210f91556c Extracting [==================================================>]  9.617kB/9.617kB
+2026-Mar-12 10:56:54.141282 e0210f91556c Pull complete
+2026-Mar-12 10:56:54.141282 d513847b8a76 Extracting [==================================================>]     128B/128B
+2026-Mar-12 10:56:54.141282 d513847b8a76 Extracting [==================================================>]     128B/128B
+2026-Mar-12 10:56:54.141282 d513847b8a76 Pull complete
+2026-Mar-12 10:56:54.141282 fffbff44edaf Extracting [==================================================>]     171B/171B
+2026-Mar-12 10:56:54.141282 fffbff44edaf Extracting [==================================================>]     171B/171B
+2026-Mar-12 10:56:54.141282 fffbff44edaf Pull complete
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Extracting [==================================================>]  5.834kB/5.834kB
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Extracting [==================================================>]  5.834kB/5.834kB
+2026-Mar-12 10:56:54.141282 d7ea68590de1 Pull complete
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Extracting [==================================================>]     185B/185B
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Extracting [==================================================>]     185B/185B
+2026-Mar-12 10:56:54.141282 4a8dcc9ff6fd Pull complete
+2026-Mar-12 10:56:54.141282 db Pulled
+2026-Mar-12 10:56:54.141282 Volume "etc8jqpc9q7olekkri4ak2mg_postgres-data"  Creating
+2026-Mar-12 10:56:54.141282 Volume "etc8jqpc9q7olekkri4ak2mg_postgres-data"  Created
+2026-Mar-12 10:56:54.141282 Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Creating
+2026-Mar-12 10:56:54.141282 Container db-etc8jqpc9q7olekkri4ak2mg-105531267077  Creating
+2026-Mar-12 10:56:54.141282 Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Created
+2026-Mar-12 10:56:54.141282 Container db-etc8jqpc9q7olekkri4ak2mg-105531267077  Created
+2026-Mar-12 10:56:54.141282 Container webhook-worker-etc8jqpc9q7olekkri4ak2mg-105531307330  Creating
+2026-Mar-12 10:56:54.141282 Container backend-etc8jqpc9q7olekkri4ak2mg-105531288256  Creating
+2026-Mar-12 10:56:54.141282 Container backend-etc8jqpc9q7olekkri4ak2mg-105531288256  Created
+2026-Mar-12 10:56:54.141282 Container frontend-etc8jqpc9q7olekkri4ak2mg-105531298507  Creating
+2026-Mar-12 10:56:54.141282 Container webhook-worker-etc8jqpc9q7olekkri4ak2mg-105531307330  Created
+2026-Mar-12 10:56:54.141282 Container frontend-etc8jqpc9q7olekkri4ak2mg-105531298507  Created
+2026-Mar-12 10:56:54.141282 Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Starting
+2026-Mar-12 10:56:54.141282 Container db-etc8jqpc9q7olekkri4ak2mg-105531267077  Starting
+2026-Mar-12 10:56:54.141282 Container redis-etc8jqpc9q7olekkri4ak2mg-105531280954  Started
+2026-Mar-12 10:56:54.141282 Error response from daemon: driver failed programming external connectivity on endpoint db-etc8jqpc9q7olekkri4ak2mg-105531267077 (1e43e1e24ff854d3b465445a999a5b9ed707f040a7fce7014586d1c61461a6b4): failed to bind port 127.0.0.1:5432/tcp: Error starting userland proxy: listen tcp4 127.0.0.1:5432: bind: address already in use
+2026-Mar-12 10:56:54.141282 exit status 1
+2026-Mar-12 10:56:54.150731 [DEBUG] Error type: RuntimeException
+2026-Mar-12 10:56:54.160669 [DEBUG] Error code: 0
+2026-Mar-12 10:56:54.169666 [DEBUG] Location: /var/www/html/app/Traits/ExecuteRemoteCommand.php:243
+2026-Mar-12 10:56:54.179031 [DEBUG] Stack trace (first 5 lines):
+2026-Mar-12 10:56:54.188733 [DEBUG] #0 /var/www/html/app/Traits/ExecuteRemoteCommand.php(104): App\Jobs\ApplicationDeploymentJob->executeCommandWithProcess()
+2026-Mar-12 10:56:54.198478 [DEBUG] #1 /var/www/html/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php(275): App\Jobs\ApplicationDeploymentJob->{closure:App\Traits\ExecuteRemoteCommand::execute_remote_command():71}()
+2026-Mar-12 10:56:54.207799 [DEBUG] #2 /var/www/html/app/Traits/ExecuteRemoteCommand.php(71): Illuminate\Support\Collection->each()
+2026-Mar-12 10:56:54.217494 [DEBUG] #3 /var/www/html/app/Jobs/ApplicationDeploymentJob.php(832): App\Jobs\ApplicationDeploymentJob->execute_remote_command()
+2026-Mar-12 10:56:54.226481 [DEBUG] #4 /var/www/html/app/Jobs/ApplicationDeploymentJob.php(464): App\Jobs\ApplicationDeploymentJob->deploy_docker_compose_buildpack()
+2026-Mar-12 10:56:54.235627 ========================================
+2026-Mar-12 10:56:54.510287 Gracefully shutting down build container: mt5q45wfwyyw76hrrb9etki2
+2026-Mar-12 10:56:54.725183 [DEBUG] [CMD]: docker stop -t 30 mt5q45wfwyyw76hrrb9etki2
+2026-Mar-12 10:56:54.725183 [DEBUG] mt5q45wfwyyw76hrrb9etki2

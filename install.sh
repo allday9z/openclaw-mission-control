@@ -56,7 +56,7 @@ usage() {
 Usage: $SCRIPT_NAME [options]
 
 Options:
-  --mode <docker|local>
+  --mode <docker|local|coolify>
   --backend-port <port>
   --frontend-port <port>
   --public-host <host>
@@ -721,6 +721,52 @@ ensure_repo_layout() {
   [[ -f "$REPO_ROOT/compose.yml" ]] || die "Missing compose.yml in repository root."
 }
 
+print_coolify_nixpacks_summary() {
+  local public_host="$1"
+  local next_public_api_url="$2"
+  local local_auth_token="$3"
+
+  cat <<SUMMARY
+
+Coolify (Nixpacks) deploy summary
+
+Create 2-3 Coolify resources from this repo:
+
+1) Backend API (FastAPI)
+- Build pack: Nixpacks
+- Base directory: backend
+- Start command: (uses backend/nixpacks.toml)
+
+Backend env vars (runtime):
+- DATABASE_URL=postgresql+psycopg://...
+- RQ_REDIS_URL=redis://...
+- AUTH_MODE=local
+- LOCAL_AUTH_TOKEN=$local_auth_token
+- BASE_URL=https://$public_host
+- CORS_ORIGINS=https://$public_host
+- DB_AUTO_MIGRATE=true
+
+2) Frontend (Next.js)
+- Build pack: Nixpacks
+- Base directory: frontend
+- Start command: (uses frontend/nixpacks.toml)
+
+Frontend env vars:
+- NEXT_PUBLIC_API_URL=$next_public_api_url
+- NEXT_PUBLIC_AUTH_MODE=local
+
+3) Optional: RQ worker (background jobs)
+- Build pack: Nixpacks
+- Base directory: backend
+- Start command override:
+  uv run python ../scripts/rq-docker worker
+
+Notes:
+- Coolify sets PORT automatically; the Nixpacks start commands use \$PORT.
+- Use Coolify-managed Postgres and Redis, then wire DATABASE_URL and RQ_REDIS_URL.
+SUMMARY
+}
+
 main() {
   local deployment_mode
   local public_host
@@ -747,33 +793,38 @@ main() {
   if [[ -n "$FORCE_MODE" ]]; then
     deployment_mode="$FORCE_MODE"
   else
-    deployment_mode="$(prompt_choice "Deployment mode" "docker" "docker" "local")"
+    deployment_mode="$(prompt_choice "Deployment mode" "docker" "docker" "local" "coolify")"
   fi
-  if ! is_one_of "$deployment_mode" "docker" "local"; then
-    die "Invalid deployment mode: $deployment_mode (expected docker|local)"
+  if ! is_one_of "$deployment_mode" "docker" "local" "coolify"; then
+    die "Invalid deployment mode: $deployment_mode (expected docker|local|coolify)"
   fi
 
-  while true; do
-    if [[ -n "$FORCE_BACKEND_PORT" ]]; then
-      backend_port="$FORCE_BACKEND_PORT"
-    else
-      backend_port="$(prompt_with_default "Backend port" "8000")"
-    fi
-    is_valid_port "$backend_port" && break
-    warn "Invalid backend port: $backend_port"
-    FORCE_BACKEND_PORT=""
-  done
+  if [[ "$deployment_mode" == "coolify" ]]; then
+    backend_port="${FORCE_BACKEND_PORT:-8000}"
+    frontend_port="${FORCE_FRONTEND_PORT:-3000}"
+  else
+    while true; do
+      if [[ -n "$FORCE_BACKEND_PORT" ]]; then
+        backend_port="$FORCE_BACKEND_PORT"
+      else
+        backend_port="$(prompt_with_default "Backend port" "8000")"
+      fi
+      is_valid_port "$backend_port" && break
+      warn "Invalid backend port: $backend_port"
+      FORCE_BACKEND_PORT=""
+    done
 
-  while true; do
-    if [[ -n "$FORCE_FRONTEND_PORT" ]]; then
-      frontend_port="$FORCE_FRONTEND_PORT"
-    else
-      frontend_port="$(prompt_with_default "Frontend port" "3000")"
-    fi
-    is_valid_port "$frontend_port" && break
-    warn "Invalid frontend port: $frontend_port"
-    FORCE_FRONTEND_PORT=""
-  done
+    while true; do
+      if [[ -n "$FORCE_FRONTEND_PORT" ]]; then
+        frontend_port="$FORCE_FRONTEND_PORT"
+      else
+        frontend_port="$(prompt_with_default "Frontend port" "3000")"
+      fi
+      is_valid_port "$frontend_port" && break
+      warn "Invalid frontend port: $frontend_port"
+      FORCE_FRONTEND_PORT=""
+    done
+  fi
 
   if [[ -n "$FORCE_PUBLIC_HOST" ]]; then
     public_host="$FORCE_PUBLIC_HOST"
@@ -806,6 +857,11 @@ main() {
   else
     local_auth_token="$(generate_token)"
     info "Generated LOCAL_AUTH_TOKEN."
+  fi
+
+  if [[ "$deployment_mode" == "coolify" ]]; then
+    print_coolify_nixpacks_summary "$public_host" "$next_public_api_url" "$local_auth_token"
+    return
   fi
 
   if [[ "$deployment_mode" == "local" ]]; then

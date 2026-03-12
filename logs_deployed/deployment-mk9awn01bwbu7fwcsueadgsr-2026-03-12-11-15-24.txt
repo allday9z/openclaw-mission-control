@@ -1,0 +1,31 @@
+2026-Mar-12 11:07:35.812321 Docker 27.0.3 with BuildKit and Buildx detected on deployment server (coolify.pve01.prod.uficon.com).
+2026-Mar-12 11:07:35.817229 Starting deployment of abhi1693/openclaw-mission-control:master to coolify.pve01.prod.uficon.com.
+2026-Mar-12 11:07:35.972619 Preparing container with helper image: ghcr.io/coollabsio/coolify-helper:1.0.12
+2026-Mar-12 11:07:37.394538 ----------------------------------------
+2026-Mar-12 11:07:37.398996 Importing abhi1693/openclaw-mission-control:master (commit sha 73b01fcb258501de3c26e087b22e819fc6b48e9a) to /artifacts/mk9awn01bwbu7fwcsueadgsr.
+2026-Mar-12 11:07:44.048044 Added 54 ARG declarations to Dockerfile for service backend (multi-stage build, added to 3 stages).
+2026-Mar-12 11:07:44.466688 Added 54 ARG declarations to Dockerfile for service frontend (multi-stage build, added to 3 stages).
+2026-Mar-12 11:07:44.730488 Service webhook-worker: All required ARG declarations already exist.
+2026-Mar-12 11:07:44.734923 Pulling & building required images.
+2026-Mar-12 11:07:44.889860 Adding build arguments to Docker Compose build command.
+2026-Mar-12 11:07:48.420548 Removing old containers.
+2026-Mar-12 11:07:49.669435 Starting new application.
+2026-Mar-12 11:07:50.308621 ========================================
+2026-Mar-12 11:07:50.314491 Deployment failed: Command execution failed (exit code 1): docker exec mk9awn01bwbu7fwcsueadgsr bash -c 'COOLIFY_BRANCH=master COOLIFY_RESOURCE_UUID=etc8jqpc9q7olekkri4ak2mg docker compose --env-file /artifacts/mk9awn01bwbu7fwcsueadgsr/.env --project-name etc8jqpc9q7olekkri4ak2mg --project-directory /artifacts/mk9awn01bwbu7fwcsueadgsr -f /artifacts/mk9awn01bwbu7fwcsueadgsr/compose.yml up -d'
+2026-Mar-12 11:07:50.314491 Error: Container redis-etc8jqpc9q7olekkri4ak2mg-110743460614 Creating
+2026-Mar-12 11:07:50.314491 Container db-etc8jqpc9q7olekkri4ak2mg-110743452933 Creating
+2026-Mar-12 11:07:50.314491 Container db-etc8jqpc9q7olekkri4ak2mg-110743452933 Created
+2026-Mar-12 11:07:50.314491 Container redis-etc8jqpc9q7olekkri4ak2mg-110743460614 Created
+2026-Mar-12 11:07:50.314491 Container webhook-worker-etc8jqpc9q7olekkri4ak2mg-110743475643 Creating
+2026-Mar-12 11:07:50.314491 Container backend-etc8jqpc9q7olekkri4ak2mg-110743464367 Creating
+2026-Mar-12 11:07:50.314491 Container webhook-worker-etc8jqpc9q7olekkri4ak2mg-110743475643 Created
+2026-Mar-12 11:07:50.314491 Container backend-etc8jqpc9q7olekkri4ak2mg-110743464367 Created
+2026-Mar-12 11:07:50.314491 Container frontend-etc8jqpc9q7olekkri4ak2mg-110743470080 Creating
+2026-Mar-12 11:07:50.314491 Container frontend-etc8jqpc9q7olekkri4ak2mg-110743470080 Created
+2026-Mar-12 11:07:50.314491 Container redis-etc8jqpc9q7olekkri4ak2mg-110743460614 Starting
+2026-Mar-12 11:07:50.314491 Container db-etc8jqpc9q7olekkri4ak2mg-110743452933 Starting
+2026-Mar-12 11:07:50.314491 Container redis-etc8jqpc9q7olekkri4ak2mg-110743460614 Started
+2026-Mar-12 11:07:50.314491 Error response from daemon: driver failed programming external connectivity on endpoint db-etc8jqpc9q7olekkri4ak2mg-110743452933 (04527ff2da9276fb073076af9791a16e22264768b898754d6872daa9368e3e8b): failed to bind port 127.0.0.1:5432/tcp: Error starting userland proxy: listen tcp4 127.0.0.1:5432: bind: address already in use
+2026-Mar-12 11:07:50.314491 exit status 1
+2026-Mar-12 11:07:50.369169 ========================================
+2026-Mar-12 11:07:50.629611 Gracefully shutting down build container: mk9awn01bwbu7fwcsueadgsr

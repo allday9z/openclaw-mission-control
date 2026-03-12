@@ -44,8 +44,6 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    ports:
-      - "${BACKEND_PORT:-8000}:8000"
 
   frontend:
     build:
@@ -64,8 +62,6 @@ services:
       NEXT_PUBLIC_AUTH_MODE: ${AUTH_MODE}
     depends_on:
       - backend
-    ports:
-      - "${FRONTEND_PORT:-3000}:3000"
     develop:
       watch:
         # Rebuild frontend image when UI source or build config changes.
